@@ -449,6 +449,7 @@ statistical method designed for binary classification problems
 
 ## AWS CloudFormation
   * utilized to define CI/CD IaC for easy management, versioning and replication
+  * When a CloudFormation stack is deleted, all resources defined within it are deleted
 
 ## Docker
 
