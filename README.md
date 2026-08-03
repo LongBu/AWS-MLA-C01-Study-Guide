@@ -41,7 +41,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * A logical container that groups users, shared storage, and execution resources, enabling collaboration and centralized management for ML development teams.
 	 
 ## SM Feature Store 
-  * stores versions
+  * stores versions of features so as to allow tracking of changes over time, ensuring reproducibility model accuracy via historical features
   * serves features for both training and real-time inference, ensuring feature consistency and lineage
   * offline versus online
 
@@ -51,7 +51,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM serverless inference
 
-## SM experiments
+## SM Experiments
+  * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: dtata preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
+  * Primary benefit of using in a ML workflow is the ability to capture and organize detailed metadata for each trial, ensuring fidelity of reproduction as they were run, which is critial for collaboration/moving models to production
 
 ## SM Canvas
   * Service for non-coders to build models
