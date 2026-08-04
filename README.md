@@ -165,9 +165,12 @@ statistical method designed for binary classification problems
 
 ## Amazon Transcribe 
   * speech (audio) to text
-  * supports custom vocabularies for improved transcription
+  * supports custom vocabularies for improved transcription accuracy (eg: for industry-specific terms)
   * integrates seamlessly with s3
   * scalable and cost-efficient processing
+  * Custom vocabulary 
+  * auto punctuation ensures transcripts are readable
+  * speaker identification distinguishes between speakers.
 
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
