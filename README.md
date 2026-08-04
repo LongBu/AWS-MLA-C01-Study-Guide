@@ -32,7 +32,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Sagemaker (SM)
 ## SM Pipeline
   * name, steps, and parameters
-  * designed to be scalable up to tens of thousands of ML workflows
+  * designed to be scale orchestrations up to tens of thousands of complex ML workflows
+  * ensures automation and reproducibility
 
 ## SM Studio
   * Tagging SM resources within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
@@ -52,6 +53,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * allows the use of AWS infrastructure to enable scaling, distribute training and logging
 
 ## SM serverless inference
+
+## SM Autopilot
+  * automates the entire ML workflow from data preprocessing to model training and tuning
+  * Automates:
+    * Algorithm selection
+    * Data preprocessing
+    * ﻿Model tuning
+    * All infrastructure
+  * It does all the trial & error for you
+  * More broadly this is called AutoML
 
 ## SM Experiments
   * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: data preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
