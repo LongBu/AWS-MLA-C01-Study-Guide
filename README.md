@@ -191,7 +191,7 @@ statistical method designed for binary classification problems
     * Best suited for analytics rather than preprocessing sensitive datasets for ML pipelines.
 
 ## Amazon Q Businesss
- * Managerd service supporting "AI" coding suggestions per prompts specific to AWS resources/services
+ * Managed service supporting "AI" coding suggestions per prompts specific to AWS resources/services
  * Supports third-party integration via plugins (eg: Jira, to automate tasks such as ticket creation).
  * Supports APIs for third-party applications (no need for custom APIs)
  * IAM Identity Center provides centralized control over user access and permissions, crucial for managing who can interact with the system.
