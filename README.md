@@ -174,8 +174,11 @@ statistical method designed for binary classification problems
 
 ## Kinesis data stream 
   * shard: a processing unit with a fixed data throughput capacity
-## Amazon firehose
+
+## Amazon Firehose
   * designed to deliver streaming data into AWS services (eg: S3, Redshift)
+  * provides real-time data ingestion
+  * configured buffer data based on time intervals helps in batch processing, which reduces API calls and helps maintain data consistency.
 
 ## Amazon Transcribe 
   * speech (audio) to text
