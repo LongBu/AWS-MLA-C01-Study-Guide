@@ -208,6 +208,7 @@ statistical method designed for binary classification problems
     * natural language queries
   * integrates natively with s3
   * indexes docs so as to provide efficient retrieval of relevant content
+  * EventBridge can trigger Lambda to ensure that new documents are indexed in Kendra automatically
 
 ## Amazon Rekognition
   * Specializes in Image Analysis (eg: label detection, faces, and objects)
@@ -325,6 +326,10 @@ statistical method designed for binary classification problems
   * Assign analysts specific tags for their roles.
 
 # Miscellaneous
+
+## AWS Lex
+  * Lex's speech recognition does not optimize fallback handling
+  * Lex’s fallback intent ensures that ambiguous user queries are handled appropriately (eg: when Kendra doesn’t provide a clear match)
 
 ## AWS WAF
   * Designed to protect web applications at the application layer, HTTP/S (Layer 7)
