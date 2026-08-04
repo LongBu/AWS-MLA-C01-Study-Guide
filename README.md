@@ -235,9 +235,17 @@ statistical method designed for binary classification problems
 ### Standard
   * provides low-latency, high throughput, optimized for frequent access (eg: for training or inference)
 
+### Standard-IA
+  * suitable for files less frequently accessed, but still need quick access
+
 ### Intelligent Tiering
-  * optimizes costs for infrequently accessed data
+  * optimizes costs for infrequently accessed data or data with unpredictable access patterns
+  * not ideal for cost-effectiveness for data known to become infrequently accessed
   * not ideal for datasets that need low-latency (eg: for training or inference)
+
+### Glacier (classes)
+  * lower cost, so long as access is seldom, otherwise consider STD/-IA/Intelligent Tiering
+  * files are still accessible, but not as fast as non-glacier classes
   
 ## Database
 
