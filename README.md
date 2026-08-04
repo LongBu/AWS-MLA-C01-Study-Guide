@@ -172,8 +172,14 @@ statistical method designed for binary classification problems
 ## kinesis producer Lib (KPL)
   * main advantage over custom AWS SDK coding: improved error handling and data throughput
 
-## Kinesis data stream 
+## Kinesis Data Streams 
   * shard: a processing unit with a fixed data throughput capacity
+  * able to scale and handle varying loads
+  * combined with AWS Lambda allows for real-time data processing and auto-scaling capabilities
+
+## Kinesis Data Analytics 
+  * Managed Apache Flink provides robust analytics capabilities
+  * Not inherently the best solution for direct, real-time responsiveness integrated with Lambda (look to Kinesis Data Streams for this)
 
 ## Amazon Firehose
   * designed to deliver streaming data into AWS services (eg: S3, Redshift)
