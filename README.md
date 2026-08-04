@@ -54,6 +54,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## SM Experiments
   * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: data preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
   * Primary benefit of using in a ML workflow is the ability to capture and organize detailed metadata for each trial, ensuring fidelity of reproduction as they were run, which is critical for collaboration/moving models to production
+  * Tracks which datasets, hyperparameters, configurations used in the experiments that produced the models, allowing tracibility and performance evaluation
 
 ## SM Canvas
   * Service for non-coders to build models
@@ -453,7 +454,8 @@ statistical method designed for binary classification problems
 
 ## Model Monitor job,  CloudWatch alerts, or SM built-in evaluation tools/SDK
   * continuously track precision and recall. If a drop in recall is detected, indicating increased financial risk, the pipeline can trigger a retraining step using updated customer behavior data.
-  * SM provides built-in evaluation tools and allows users to plot training metrics (for users to visualize learning progress so as to adjust) using the SM SDK to assess the model’s performance before deployment. 
+  * SM provides built-in evaluation tools and allows users to plot training metrics (for users to visualize learning progress so as to adjust) using the SM SDK to assess the model’s performance before deployment.
+  * Model monitor does not provide experiment tracking (look to SM Experiments for this)
 
 # Model Overfitting
   * Compare training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
