@@ -175,6 +175,27 @@ statistical method designed for binary classification problems
   * auto punctuation ensures transcripts are readable
   * speaker identification distinguishes between speakers.
 
+## Amazon Translate
+  * If small volumes of data, orchestrate via Lambda (15 minute limit)
+  * If large volumes of data, orchestrate via step functions (up to 1 year limit)
+  * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and Data Wrangler for cleaning and normalization
+
+## AWS Macie
+  * Discover and classify sensitive data in S3
+  * can trigger AWS Lambda functions to redact or remove sensitive information when added to an S3 bucket, providing an automated, scalable, and low-overhead solution
+  * leverages ML to automatically detect, classify, and protect sensitive data/PII
+  * most appropriate solution when you need to identify and redact sensitive data stored in S3 before it is accessed or processed with little manual intervention
+  * Concerning redaction/removal, other services mentioned, such as AWS Glue, Amazon Comprehend, and AWS DataBrew, are capable of processing and transforming data, but they either:
+    * Require manual setup for redaction
+    * Are not designed for sensitive data classification
+    * Best suited for analytics rather than preprocessing sensitive datasets for ML pipelines.
+
+## Amazon Q Businesss
+ * Managerd service supporting "AI" coding suggestions per prompts specific to AWS resources/services
+ * Supports third-party integration via plugins (eg: Jira, to automate tasks such as ticket creation).
+ * Supports APIs for third-party applications (no need for custom APIs)
+ * IAM Identity Center provides centralized control over user access and permissions, crucial for managing who can interact with the system.
+
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
   * Easier to implement than an NLP model from the ground up
@@ -555,21 +576,6 @@ statistical method designed for binary classification problems
 
 ## Voting Ensemble
   * Simple aggregation technique where multiple models vote (greatest result for classification and average for regression) without learning optimal weights or relationships
-
-# Amazon Translate
-  * If small volumes of data, orchestrate via Lambda (15 minute limit)
-  * If large volumes of data, orchestrate via step functions (up to 1 year limit)
-  * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and Data Wrangler for cleaning and normalization
-
-# AWS Macie
-  * Discover and classify sensitive data in S3
-  * can trigger AWS Lambda functions to redact or remove sensitive information when added to an S3 bucket, providing an automated, scalable, and low-overhead solution
-  * leverages ML to automatically detect, classify, and protect sensitive data/PII
-  * most appropriate solution when you need to identify and redact sensitive data stored in S3 before it is accessed or processed with little manual intervention
-  * Concerning redaction/removal, other services mentioned, such as AWS Glue, Amazon Comprehend, and AWS DataBrew, are capable of processing and transforming data, but they either:
-    * Require manual setup for redaction
-    * Are not designed for sensitive data classification
-    * Best suited for analytics rather than preprocessing sensitive datasets for ML pipelines.
 
 # Shortcuts
   * 'manually' is usually a tell to not use the premise (eg: CPU/memory scaling doesn't necessarily help with manually scaled)
