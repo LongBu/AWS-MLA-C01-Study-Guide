@@ -254,6 +254,7 @@ statistical method designed for binary classification problems
   * can be used to apply custom masking transformations on sensitive fields in tabular data, preserving the dataset's structure and order for downstream use
   * glue partitioning aids parallel processing and boosts query performance
   * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
+  * If wanting to optimize ETL costs (eg: avoid using more resources than necessary) decrease the number of Data Processing Units (DPUs) as the default might be more than what is required for a given job
   * Inputs:
     * Aurora
     * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
