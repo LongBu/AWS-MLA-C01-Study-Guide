@@ -497,10 +497,13 @@ statistical method designed for binary classification problems
   * Less relevant when primary concern is identifying True Positives and avoiding False Negatives (better suited for precision and recall)
   * The proportion of true negatives correctly identified—focuses on minimizing false positives in some contexts.
 
-## Model Monitor job,  CloudWatch alerts, or SM built-in evaluation tools/SDK
+## SM Model Monitor
+  * Model monitor does not provide experiment tracking (look to SM Experiments for this)
+  * Evaluate the model’s performance in production by ingesting ground truth data to merge actual outcomes (ground truth data) with model predictions and comparing predicted results against the observed outcomes.
+
+## SM Model Monitor,  CloudWatch alerts, or SM built-in evaluation tools/SDK
   * continuously track precision and recall. If a drop in recall is detected, indicating increased financial risk, the pipeline can trigger a retraining step using updated customer behavior data.
   * SM provides built-in evaluation tools and allows users to plot training metrics (for users to visualize learning progress so as to adjust) using the SM SDK to assess the model’s performance before deployment.
-  * Model monitor does not provide experiment tracking (look to SM Experiments for this)
 
 # Model Overfitting
   * Compare training and validation loss curves over time: if validation loss much higher than training loss-> model overfitting
