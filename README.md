@@ -55,6 +55,11 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM serverless inference
 
+## SM Neo
+  * optimizes model deployment and inference speed for edge devices 
+  * Train once, run anywhere
+  * Consists of a compiler and a runtime library models
+
 ## SM Autopilot
   * automates the entire ML workflow from data preprocessing to model training and tuning
   * Automates:
@@ -206,6 +211,15 @@ statistical method designed for binary classification problems
   * If small volumes of data, orchestrate via Lambda (15 minute limit)
   * If large volumes of data, orchestrate via step functions (up to 1 year limit)
   * Can normalize language, but can't address formatting, noise, missing fields.  Look to glue and Data Wrangler for cleaning and normalization
+
+## Amazon Inspector
+  * Automated security assessments (Only λ, EC2 instances, and container infrastructure)
+  * Reporting and integration with AWS Security HUB
+  * Send Findings to Amazon Event Bridge
+  * Continuous scanning of the infrastructure only when needed
+  * Package vulnerabilities (ECR and EC2) via DB of CVE
+  * Network reachability (EC2)
+  * Risk score is associated with all vulnerabilities for prioritization
 
 ## AWS Macie
   * Discover and classify sensitive data in S3
