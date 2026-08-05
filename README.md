@@ -208,6 +208,7 @@ statistical method designed for binary classification problems
 
 ## AWS Macie
   * Discover and classify sensitive data in S3
+  * supports automated data classification and sensitive data discovery jobs that can be scheduled to run regularly allowing for automated reporting of PII.
   * can trigger AWS Lambda functions to redact or remove sensitive information when added to an S3 bucket, providing an automated, scalable, and low-overhead solution
   * leverages ML to automatically detect, classify, and protect sensitive data/PII
   * most appropriate solution when you need to identify and redact sensitive data stored in S3 before it is accessed or processed with little manual intervention
