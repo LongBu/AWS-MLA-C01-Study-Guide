@@ -235,14 +235,14 @@ statistical method designed for binary classification problems
 ## Amazon GuardDuty:
   * Threat detection service that continuously monitors AWS accounts and workloads for malicious activity to deliver detailed security findings for visibility and remediation
   * Helps against the following:
-  * Can protect against CryptoCurrency attacks (has a dedicated "finding" for it)
-Anomaly detection via ML
-Malware scanning
-  * AWS accounts
-  * EC2
-  * EKS
-  * S3
-  * EBS (malware scan[s])
+    * Can protect against CryptoCurrency attacks (has a dedicated "finding" for it)
+    * Anomaly detection via ML
+    * Malware scanning
+    * AWS accounts
+    * EC2
+    * EKS
+    * S3
+    * EBS (malware scan[s])
   * Scans these data sources:
     * CloudTrail Events log
     * CloudTrail S3 data event logs
