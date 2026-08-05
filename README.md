@@ -217,6 +217,7 @@ statistical method designed for binary classification problems
  * Managed service supporting "AI" coding suggestions per prompts specific to AWS resources/services
  * Supports third-party integration via plugins (eg: Jira, to automate tasks such as ticket creation).
  * Supports APIs for third-party applications (no need for custom APIs)
+ * Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.  
  * IAM Identity Center provides centralized control over user access and permissions, crucial for managing who can interact with the system.
 
 ## Amazon Comprehend (Medical):
