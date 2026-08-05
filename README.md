@@ -34,6 +34,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * name, steps, and parameters
   * designed to be scale orchestrations up to tens of thousands of complex ML workflows
   * ensures automation and reproducibility
+  * parameters can have default values, but may also be overridden during pipeline execution
 
 ## SM Studio
   * Tagging SM resources within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
