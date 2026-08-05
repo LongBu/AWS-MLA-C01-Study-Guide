@@ -221,6 +221,36 @@ statistical method designed for binary classification problems
   * Network reachability (EC2)
   * Risk score is associated with all vulnerabilities for prioritization
 
+## Amazon Fraud Detector
+  * Upload your own historical fraud data
+  * Builds custom models from a template you choose
+  * Exposes an API for your online application
+  * designed to scale automatically based on traffic, maintaining detection accuracy without the need for manual resource management. This ensures that fraud detection remains effective even during peak periods.
+  * Assess risk from:
+    * New accounts
+    * Guest checkout
+    * "Try before you buy" abuse
+    * Online payments
+
+## Amazon GuardDuty:
+  * Threat detection service that continuously monitors AWS accounts and workloads for malicious activity to deliver detailed security findings for visibility and remediation
+  * Helps against the following:
+  * Can protect against CryptoCurrency attacks (has a dedicated "finding" for it)
+Anomaly detection via ML
+Malware scanning
+  * AWS accounts
+  * EC2
+  * EKS
+  * S3
+  * EBS (malware scan[s])
+  * Scans these data sources:
+    * CloudTrail Events log
+    * CloudTrail S3 data event logs
+    * VPC Flow logs
+    * DNS query logs
+    * EKS audit logs
+  * Disabling will delete all data while suspending will stop analysis, but not delete
+
 ## AWS Macie
   * Discover and classify sensitive data in S3
   * supports automated data classification and sensitive data discovery jobs that can be scheduled to run regularly allowing for automated reporting of PII.
