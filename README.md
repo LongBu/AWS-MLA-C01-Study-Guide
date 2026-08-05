@@ -122,6 +122,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### Image classification
   * Assign one or more labels to an image
   * Not as well suited to detect multiple objects in an image as Object Detection, due to the lack of placement context
+  * Allows teams (even those inexeperienced) to focus on quickly building and deploying a ML model for image classification without managing the infrastructure.
 
 ### Object Detection
   * Identify/Locate all objects in an image with bounding boxes
