@@ -69,6 +69,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: data preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
   * Primary benefit of using in a ML workflow is the ability to capture and organize detailed metadata for each trial, ensuring fidelity of reproduction as they were run, which is critical for collaboration/moving models to production
   * Tracks which datasets, hyperparameters, configurations used in the experiments that produced the models, allowing tracibility and performance evaluation
+  * offers an API and a graphical interface in SM Studio, allowing visualization and comparison of key performance metrics (eg: accuracy and loss) across different trials to identify the best performing model.
 
 ## SM Canvas
   * Service for non-coders to build models
