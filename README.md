@@ -499,7 +499,7 @@ statistical method designed for binary classification problems
 
 ## SM Model Monitor
   * Model monitor does not provide experiment tracking (look to SM Experiments for this)
-  * Evaluate the model’s performance in production by ingesting ground truth data to merge actual outcomes (ground truth data) with model predictions and comparing predicted results against the observed outcomes.
+  * Evaluates the model’s performance in production by ingesting and merging actual outcomes (ground truth data) with model predictions and comparing predicted results against the observed outcomes.
 
 ## SM Model Monitor,  CloudWatch alerts, or SM built-in evaluation tools/SDK
   * continuously track precision and recall. If a drop in recall is detected, indicating increased financial risk, the pipeline can trigger a retraining step using updated customer behavior data.
