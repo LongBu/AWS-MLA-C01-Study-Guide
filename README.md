@@ -158,6 +158,7 @@ statistical method designed for binary classification problems
   * Model caching can improve performance and consistency for repeated questions
   * Lowering the temperature via the Amazon Bedrock API and reducing the top-K parameter limits randomness in token selection, leading to more deterministic and consistent responses from the LLM.
   * Retrain the LLM (aka: fine tune the FM [not from scratch]) with a retail-specific dataset to improve consistency in responses related to product information and return policies.
+  * features Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.
 
 
 # Data mesh architecture
