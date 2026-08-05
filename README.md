@@ -136,6 +136,9 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Effective at working with highly imbalanced data
   * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
 
+### Factorization Machines
+  * ideal for recommendation systems because they model interactions between features (eg: users, movies, ratings) and handle sparse datasets effectively
+
 ### Decision Tree Regression 
   * predicts continuous values
  
