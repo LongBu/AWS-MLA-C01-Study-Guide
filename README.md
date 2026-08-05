@@ -225,7 +225,7 @@ statistical method designed for binary classification problems
   * Upload your own historical fraud data
   * Builds custom models from a template you choose
   * Exposes an API for your online application
-  * designed to scale automatically based on traffic, maintaining detection accuracy without the need for manual resource management. This ensures that fraud detection remains effective even during peak periods.
+  * designed to scale automatically based on traffic, maintaining detection accuracy without the need for manual resource management. 
   * Assess risk from:
     * New accounts
     * Guest checkout
