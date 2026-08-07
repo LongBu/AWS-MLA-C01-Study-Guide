@@ -328,7 +328,10 @@ statistical method designed for binary classification problems
 
 ## FSX 
   * Lustre mounted/linked with S3 bucket with fast file mode enabled is optimal for efficient on demand streaming of large (video) files.  Fast file mode in S3 enable streaming without fully downloading large files, reducing storage and overhead.
-  * Only FSx for Lustre can be mounted directly for SM training jobs (eg: FSx for NetApp ONTAP cannot be mounted directly as a volume in SageMaker training jobs), so if not Lustre based, copy to S3
+  * Only FSx for Lustre can be mounted *directly* for SM training jobs (eg: FSx for NetApp ONTAP cannot be mounted directly as a volume in SageMaker training jobs), so if not Lustre based, copy to S3.
+  * If within the same VPC as the FSx Storage Virtual Machine (SVM), FSx for NetApp ONTAP can be mounted as an NFS volume for SM training (especially good if large)
+  * If no VPC connectivity to the FSx Storage Virtual Machine (SVM), FSx for NetApp ONTAP contents must be copied to S3 for SM training (not great if large)
+  * If cross-environment or cross-account migration (eg: not the same VPC) for the FSx for NetApp ONTAP storage, utilize Datasync to migrate the contents to S3 for SM training (not great if large)
   * Mounting is good, but more apt for performance, Fast file mode is key
 
 ## S3
