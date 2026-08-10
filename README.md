@@ -32,9 +32,17 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Sagemaker (SM)
 ## SM Pipeline
   * name, steps, and parameters
-  * designed to be scale orchestrations up to tens of thousands of complex ML workflows
+  * designed to automate and scale orchestrations up to tens of thousands of complex ML workflows (eg: data pre-processing, data, transformation, and model training)
   * ensures automation and reproducibility
+  * Natively handles long running processing jobs at scale via SM processing jobs
   * parameters can have default values, but may also be overridden during pipeline execution
+  * Provides native execution tracking, step level retries, lineage management, and a unified monitoring interface
+  * Integrate with S3 and supports multiple file formats( e.g. CSV Parque, JSON)
+  * Callback in SM pipelines:
+    * enables integration with any external compute resource or service outside SM.
+    * When involved, the pipeline execution pauses and sends a task token to the external system via SQS.
+    * The external job (e.g. EMR job) performs the work and then returns the task token to resume the pipeline
+  * AmazonSageMakerPipelineIntegrations manage policy, or something commensurate must be attached to said SM pipeline execution role to grant I am permissions required for external jobs (e.g. Amazon EMR job flow) with a pipeline callback step
 
 ## SM Studio
   * Tagging SM resources/user profiles within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
@@ -307,6 +315,7 @@ Note these are my own personal notes and are a work in progress as I study towar
  * Supports APIs for third-party applications (no need for custom APIs)
  * Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.  
  * IAM Identity Center provides centralized control over user access and permissions, crucial for managing who can interact with the system.
+ * blocked phrase functionality is a built-in guard rail, specifically designed to prevent certain terms or phrases from appearing API response responses
 
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
@@ -594,13 +603,13 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## F1 Score: 
   * 2TP/(2TP + FP + FN) = 2 * (Precision * Recall)/(Precision+Recall)
-  * useful to balance precision and recall, but both are more directly aligned with the target objective, true positives (eg: default/fraud/etc.).
+  * useful to balance precision and recall, but both are more directly aligned with the target objective, true positives (eg: default/fraud/etc.) making it a robust evaluation metric for imbalanced data sets
   * harmonic mean of precision and recall—used when a balance between the two is needed.
 
 ## AUC/ROC: 
-  * Useful metric for understanding performance across thresholds and imbalanced datasets. 
+  * Useful metric for understanding performance (model discrimination) across classification thresholds and imbalanced datasets. 
   * Does not directly capture the trade-off between false positives and false negatives
-  * Measures a model’s ability to distinguish between classes by plotting true positive rate vs. false positive rate across thresholds.
+  * Measures a model’s ability to distinguish between classes by plotting true positive rate vs. false positive rate across thresholds providing a threshold independent view of performance
 
 ## Precision:
   * TP/(TP + FP)
