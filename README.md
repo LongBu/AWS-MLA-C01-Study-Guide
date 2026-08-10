@@ -127,12 +127,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * providing feature attribution, explanations, using SHAP values, monitors production inference endpoints for bias drift, and feature attribution drift
   * can generate model governance reports
 
+## SM Debugger 
+  * provides real-time visibility into training jobs and can automatically detect non-converging conditions (eg: vanishing ingredients, exploding ingredients, or stagnant and loss values) that can be utilized to terminate jobs early (eg: early stopping) to save computational resources, energy use, etc.
+
 ## Multi-Model Endpoints
   * available via SM
-  * host multiple models on a single endpoint
-  * single container and instance fleet, which might have varying degrees of usage (infrequent to frequent) to dynamically load models on demand
+  * host multiple models (up to thousands of models) on a single endpoint
+  * single shared container and instance fleet, which might have varying degrees of usage (infrequent to frequent) to dynamically load/unload models on demand from memory as needed
   * reduces cost
   * improves resource utilization (reduce per-model overhead, optimize memory usage)
+  * Good selection if seeing any language discussing "hosting multiple models, cost-effectively" 
 
 ## SM Categories of built-in algorithm:
   * supervised
@@ -628,6 +632,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Less relevant when primary concern is identifying True Positives and avoiding False Negatives (better suited for precision and recall)
   * The proportion of true negatives correctly identified—focuses on minimizing false positives in some contexts.
 
+## Bias
+  * Comparing feature distributions across demographic groups is a pre-processing or exploratory step, not a direct measurement of model bias
+  * Assessing true positive rates across different demographic groups, also known as, equal opportunity, as a direct how come level fairness metric identifies where the model has bias
+  * This metric can be evaluated by SM clarify
+
+## Bias vs Variance 
+  * the bias versus variance trade-off refers to the challenge of balancing the error due to the models complexity (variance) and the error due to incorrect assumptions in the model (bias), with high bias can cause underfitting and high variance can cause overfitting
+  * bias == underfitting
+  * variance == overfitting 
+
 ## SM Model Monitor
   * Model monitor does not provide experiment tracking (look to SM Experiments for this)
   * Evaluates the model’s performance in production by ingesting and merging actual outcomes (ground truth data) with model predictions and comparing predicted results against the observed outcomes.
@@ -663,10 +677,12 @@ Note these are my own personal notes and are a work in progress as I study towar
     * All at once: shift everything, monitor, terminate blue fleet
     * Canary: shift a small portion of traffic and monitor
     * Linear: Shift traffic in linearly spaced steps
+  * These are deployment, safety guard rail designed to validate a newly deployed version incrementally for completing a full traffic migration, not to maintain a steady state traffic split for ongoing AB testing.  This strategy is intended to conclude once the new fleet is fully promoted or rolled back and requires additional automation and cloud watch alarm configurations to manage the shift life cycles, resulting in higher operational overhead than production variants.
 
-## Weighted Traffic Splitting
+## Weighted Traffic Splitting (Production Variants)
   * Methodology of gradually routing traffic to different model versions so as to A/B test
   * Does not offer the same environmental isolation as that of Blue/Green Deployments
+  * allows multiple model versions to be hosted behind a single endpoint, with traffic distributed, according to the proportional VariantWeight values (e.g. .2 for 20%).  CloudWatch automatically emits per variant metrics such as invocations and latency with no additional instrumentation and labeling providing continuous monitoring without extra tooling or automation infrastructure (eg: least overhead)
 
 # EC2
 
