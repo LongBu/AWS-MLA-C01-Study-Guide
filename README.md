@@ -421,12 +421,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Dynamic data masking obfuscates sensitive data in specific columns in real-time, preserving source data integrity and avoiding data duplication or transformation.
   * Materialized views exclude sensitive fields but require creating and maintaining additional views and do not dynamically obfuscate data, which may not fully protect sensitive information.
 
+## AWS step functions
+  * Can orchestrate multi-service workflows with both glue and SM via SDK integrations
+  * Not an ML specific pipeline tool (eg: experiment lineage tracking, model artifact versioning, and SM model registry integration) look to SM pipelines for this sort of thing
 
 # AWS Glue
   * serverless ETL service that uses Apache Spark under the hood and is suitable for scalable data transformations
   * can be used to apply custom masking transformations on sensitive fields in tabular data, preserving the dataset's structure and order for downstream use
   * glue partitioning aids parallel processing and boosts query performance
   * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
+  * Glue DataBrew allows recipes to be exported and reapplied to new data sets without recomputing the transformation statistics.  This preserves, the pre-processing/transformation steps carried out both in training as well as at runtime inference
   * If wanting to optimize ETL costs (eg: avoid using more resources than necessary) decrease the number of Data Processing Units (DPUs) as the default might be more than what is required for a given job
   * Inputs:
     * Aurora
@@ -488,6 +492,14 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Assign analysts specific tags for their roles.
 
 # Miscellaneous
+
+## Training Optimizations
+  * store training data in the same ADS region/AZ where the instances are deployed
+  * launch training instances in the same VPC subnet ensuring that inter-instance communication occurs entirely over the local network segment without any intermediate routing overhead between different subnets
+
+## Generative models vs Discriminative models
+  * generative models focus on generating new data learned from patterns in training
+  * Discriminative models classify data by distinguishing between different classes
 
 ## AWS Lex
   * Lex's speech recognition does not optimize fallback handling
@@ -713,6 +725,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ### Inf1 (Inferentia)
   * purposely built for high throughput, low latency inference
+
+### AWS Trainium 
+  * purpose built for training, ML models to improve energy efficiency reduce cost with optimize deep learning hardware compared to traditional GPU based instances
 
 ### M5
   * provide balanced resources, but lacks specialized GPU(s) necessary for efficient training of ML models
