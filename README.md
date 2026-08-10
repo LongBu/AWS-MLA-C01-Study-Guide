@@ -117,8 +117,10 @@ Note these are my own personal notes and are a work in progress as I study towar
   * offers an API and a graphical interface in SM Studio, allowing visualization and comparison of key performance metrics (eg: accuracy and loss) across different trials to identify the best performing model.
 
 ## SM Canvas
-  * Service for non-coders to build models
+  * fully no code visual interface that enables business analyst and non-technically suited (non-codeers) to build train and deploy ML models
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
+  * when a question requires a zero code interface for non-developers or business stakeholders to build and deploy ML models look for an answer utilizing canvas
+  * for any model built outside of SM using an external framework the model must be registered in the SM model registry before it can be imported into canvas
 
 ## SM Clarify
   * A tool for detecting bias in pre-training data and explaining post training model predictions, ensuring fairness and transparency in machine learning models.
