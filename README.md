@@ -170,6 +170,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### XGBoost
   * Effective at working with highly imbalanced data
   * Provides a strong balance between accuracy and traceability of feature importance and how it influences predictions (much the case for other Tree-based algorithms)
+  * Great at handling tabular data and supports binary classification multi class classification regression, and ranking tasks
+  * Great at complex non-linear interactions (eg: churn, booking frequency, loyalty tier, and cancellation patterns) between the features and the target(s)
 
 ### Factorization Machines
   * ideal for recommendation systems because they model interactions between features (eg: users, movies, ratings) and handle sparse datasets effectively
@@ -184,9 +186,11 @@ Note these are my own personal notes and are a work in progress as I study towar
   * predicts continuous numerical outcomes and is not appropriate for binary classification tasks.
   * most effective approach to establish a simple, interpretable performance baseline to evaluate against more complex models in SM utilizing the same data
   * Effective at training with highly (class) imbalanced data, which can be mitigated by either the 'balance_multiclass_weights' or 'class_weights' hyperparameters.  This is more apropos over XGBoost if per class weighting is the ask.
+  * Capable of solving both classification and regression problems, using linear based models/relationships between input features and the target variable(s)
 
 ### Logistic regression
-statistical method designed for binary classification problems
+  * statistical method designed for binary classification problems
+  * if the question is seeking a binary or multi class classification look to logistic regression over linear regression, although Linear learner can do both linear regression and logistic regression.
 
 # Amazon Bedrock
   *  A fully managed AWS service that provides access to foundation models (FMs) from various providers, allowing developers to build and scale generative AI applications without managing underlying infrastructure.
@@ -340,6 +344,8 @@ statistical method designed for binary classification problems
 ## Amazon Rekognition
   * Specializes in Image Analysis (eg: label detection, faces, and objects)
   * Doesn't provide document structure extration
+  * Face match is conducted by the Rekognition SearchFacesByImage API automatically comparing each image against a pre-index face collection of authorized faces
+  * DetectFaces API identifies the presence, location and facial attributes (e.g. age range, emotion, or pose), but does not offer the ability to match a face
 
 # EMR
   * Big data platform that runs Spark, Hadoop and Presto for large scale data processing/transformations with full control over cluster configuration and resource management.
@@ -502,10 +508,18 @@ statistical method designed for binary classification problems
   * A visualization tool for analyzing cost and usage trends over time, but it does not provide alerting capabilities.
   * provides insights but cannot send cost threshold alerts
   * provide visibility and recommendations but lack built-in alerting functionality
+  * offers right sizing and recommendations for EC2 instances; though these recommendations are sourced from AWS Compute Optimizer
+  * Best suited for budget planning, anomaly detection and high-level cost friendly analysis rather than Deep resource level utilization analysis across EC2, ECS, EBS and lambda functions (look to AWS Compute Optimizer for this)
+  * Best seleciton if the scenario involves visualizing cost trends, building custom cost and usage reports or detecting spending anomalies
 
 ## AWS Budgets
   * A cost management service that allows users to set spending thresholds and receive automated alerts when actual or forecasted costs exceed those limits.
   * must be used to configure and send cost alerts, although it can use Cost Explorer data
+
+## AWS Compute Optimizer:
+  * Actionable recommendations for optimal AWS Compute resources (λ, EC2, ECS EBS) for workloads to reduce costs and improve performance by using ML to analyze historical utilization metrics
+  * Utilizes CloudWatch utilization metric history to produce projected utilization graphs, savings opportunity metrics, and performance improvement opportunity metrics at the account, resource type, and individual resource levels
+  * Helps you choose optimal EC2 types, including those part of the Autoscaling group based on utilization
 
 ## Amazon CloudWatch
   * while powerful for operational monitoring (CPU, memory, latency), is not designed to monitor or alert on billing data.
