@@ -193,12 +193,17 @@ Note these are my own personal notes and are a work in progress as I study towar
   * if the question is seeking a binary or multi class classification look to logistic regression over linear regression, although Linear learner can do both linear regression and logistic regression.
 
 # Amazon Bedrock
-  *  A fully managed AWS service that provides access to foundation models (FMs) from various providers, allowing developers to build and scale generative AI applications without managing underlying infrastructure.
+  *  A fully managed AWS service that provides access to foundation models (FMs) from various providers, allowing developers to build and scale generative AI applications without managing underlying infrastructure with production scaling via a single API and built-in security privacy.
   * Model caching can improve performance and consistency for repeated questions
   * Lowering the temperature via the Amazon Bedrock API and reducing the top-K parameter limits randomness in token selection, leading to more deterministic and consistent responses from the LLM.
   * Retrain the LLM (aka: fine tune the FM [not from scratch]) with a retail-specific dataset to improve consistency in responses related to product information and return policies.
   * features Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.
 
+# SM Jumpstart
+  * model hub that provides access to hundreds of pre-trained FMs and LLMs
+  * allows users to fine-tune these model on custom data sets through a GUI in SM studio
+  * Offers prebuilt solution templates, algorithms, and Jupiter notebooks supporting both traditional ML workflows and generative AI use cases
+  * Good selection if a question involves fine-tuning a pre-trained LLM or FM with low code, tooling and rapid deployment
 
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
@@ -429,6 +434,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Provide comprehensive data preparation and (prebuilt) transformations (eg: (cleaning normalizing, text tokenization)
   * Offers easy to use interactive, visual interface for data prep (e.g. cleaning transforming analyzing data) which is ideal for limited, low code use experience, but is not intended for large-scale distributed data processing across multiple heterogeneous data sources.
   * provides built-in transformations to mask sensitive data in tabular datasets while maintaining data integrity and structure.
+  * while low code, it is not used for model training, fine-tuning, or model deployment
   * Inputs
     * S3
     * Athena
@@ -490,12 +496,23 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
   * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
 
+## ECR
+  * a fully managed container image registry service used to store managing deploy container images
+  * not a container, orchestration or runtime service (look to EKS or ECS for this sort of thing)
+
 ## EKS
   * managed kubernetes service that reduces operational overhead while providing full container orchestration
   * Horizontal Pod Autoscaler (HPA) automatically scales pod replicas based on real-time metrics per configuration (CPU, memory, etc.)
   * Managed control plane - no manual cluster management
   * Dynamic scaling based on observed workload metrics
   * Full kubernetes orchestration for containerized applications
+
+## AWS CDK
+  * used for IaC allowing the definition of infrastructure and deployment via high-level programming language of containerized micro surfaces using EKS for orchestration
+
+## Amazon Lightsail
+  * designed for simple, low scale container performance with a simplified management model
+  * lacks advanced orchestration features, fine-grained scale and controls
 
 ## Fargate
   * serverless compute engine for containers
