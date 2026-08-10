@@ -106,7 +106,9 @@ Note these are my own personal notes and are a work in progress as I study towar
     * ﻿Model tuning
     * All infrastructure
   * It does all the trial & error for you
+  * provides a low code, automated ML capability that handles data processing, algorithm selection, and hyperparameter optimization with minimal intervention
   * More broadly this is called AutoML
+  * if any mention of AutoML, transparent model generation, or low code training with explainable steps on tabular or text datasets look for auto pilot as being part of the solution
 
 ## SM Experiments
   * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: data preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
@@ -119,7 +121,9 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
 
 ## SM Clarify
-  * A tool for detecting bias and explaining model predictions, ensuring fairness and transparency in machine learning models.
+  * A tool for detecting bias in pre-training data and explaining post training model predictions, ensuring fairness and transparency in machine learning models.
+  * providing feature attribution, explanations, using SHAP values, monitors production inference endpoints for bias drift, and feature attribution drift
+  * can generate model governance reports
 
 ## Multi-Model Endpoints
   * available via SM
