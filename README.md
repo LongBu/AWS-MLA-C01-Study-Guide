@@ -54,6 +54,36 @@ Note these are my own personal notes and are a work in progress as I study towar
   * allows the use of AWS infrastructure to enable scaling, distribute training and logging
 
 ## SM serverless inference
+  * synchronous
+  * supports payload sizes up to 4MB
+  * supports processing times up to 60 seconds
+  * designed for sporadic intermittent or infrequent traffic patterns where cold-start latency is acceptable, but will scale if necessary
+  * unsuitable for consistently low latency, high volume real time predictions if not provisioned
+  * provisioned concurrency is designed specifically for predictable traffic bursts keeping the endpoints warm so that the compute resources are pre-initialized ready to respond with low latency 
+  * allows for one model per endpoint configuration
+  * setting a low maxconcurrency parameter reduces idle compute costs
+
+## SM real time inference 
+  * Appropriate type when workloads demand consistently, low latency (milliseconds) and synchronous, interactive predictions
+  * endpoint is fully managed and dynamic autoscaling can be configured to handle spikes
+  * HA
+  * pairs well with multi model end point
+  * supports payload sizes up to 6MB
+  * supports processing times up to 60 seconds
+  * if seeing the words "real time, low latency synchronous inference" look for this as an answer 
+  * the question prohibits any infrastructure or scale and configuration management this is not an answer
+
+## SM asynchronous inference endpoint
+  * Supports payloads up to one gigabyte and processing times up to one hour
+  * Queues incoming requests
+  * Autoscales per demands (up or down to zero)
+  * able to handle variable traffic with idle periods near real time latency tolerance
+
+## SM Batch Transform
+  * asynchronous
+  * one model
+  * off-line processing
+  * large scale inference over large data sets
 
 ## SM Neo
   * optimizes model deployment and inference speed for edge devices 
@@ -317,6 +347,7 @@ statistical method designed for binary classification problems
 
 ## EMR cluster 
   * can use instance store for ephemeral/transient, cost-effective storage of temporary data
+
 ## EMR serverless
 
 # Storage
@@ -618,7 +649,7 @@ statistical method designed for binary classification problems
 ### G4DN (Nvidia T4 GPUs) 
   * provide modest power and cost savings but P3 or P4 is better for compute/low latency needs
 
-### Inf1 
+### Inf1 (Inferentia)
   * purposely built for high throughput, low latency inference
 
 ### M5
@@ -628,7 +659,7 @@ statistical method designed for binary classification problems
   * offer powerful GPU that significantly reduces training time and improves computational performance for ML workload (eg: low latency inference)
 
 ### P4 (Nvidia A100 GPUs) 
-  * offer massive compute/memory bandwidth
+  * offer massive/significant compute/memory bandwidth for use within complex large model training
 
 ### R5
   * instances optimized for memory intensive applications, but lacks GPU(s), which is essential for efficient ML training
