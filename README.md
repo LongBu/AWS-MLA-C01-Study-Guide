@@ -1,4 +1,4 @@
-## AWS-SAA-C01-Study-Guide
+## AWS-MLAA-C01-Study-Guide
 
 Note these are my own personal notes and are a work in progress as I study towards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
 
@@ -6,7 +6,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 1. <a href="#introduction">Introduction</a>
 
 ## Introduction
-<a href="https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate-Exam_Guide_EN_1.8.pdf">AWS Certified Solutions Architect Associate (SAA-C01) Exam Guide</a>
+<a href="https://docs.aws.amazon.com/aws-certification/latest/machine-learning-engineer-associate-01/machine-learning-engineer-associate-01.html">AWS Certified Solutions Architect Associate (MLA-C01) Exam Guide</a>
 
 <a href="https://certmetrics.com/amazon/candidate/benefit_summary.aspx">Don't forget to utilize a benefit code if you've passed another AWS exam previously to save</a>
 
