@@ -327,7 +327,7 @@ Note these are my own personal notes and are a work in progress as I study towar
  * Supports APIs for third-party applications (no need for custom APIs)
  * Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.  
  * IAM Identity Center provides centralized control over user access and permissions, crucial for managing who can interact with the system.
- * blocked phrase functionality is a built-in guard rail, specifically designed to prevent certain terms or phrases from appearing API response responses
+ * blocked phrase functionality is a built-in guard rail, specifically designed to prevent certain terms or phrases from appearing in API responses
 
 ## Amazon Comprehend (Medical):
   * Serverless NLP service harnessing NLP to uncover valuable insights and connections in text analytics
