@@ -541,7 +541,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Full kubernetes orchestration for containerized applications
 
 ## AWS CDK
-  * used for IaC allowing the definition of infrastructure and deployment via high-level programming language of containerized micro surfaces using EKS for orchestration
+  * used for IaC allowing the definition of infrastructure and deployment via high-level programming language of containerized micro services using EKS for orchestration
 
 ## Amazon Lightsail
   * designed for simple, low scale container performance with a simplified management model
