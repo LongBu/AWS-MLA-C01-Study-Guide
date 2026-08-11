@@ -69,7 +69,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * unsuitable for consistently low latency, high volume real time predictions if not provisioned
   * provisioned concurrency is designed specifically for predictable traffic bursts keeping the endpoints warm so that the compute resources are pre-initialized ready to respond with low latency
   * allows for one model per endpoint configuration
-  * setting a low maxconcurrency parameter reduces idle compute costs
+  * setting a low MaxConcurrency parameter reduces idle compute costs
 
 ## SM real time inference 
   * Appropriate type when workloads demand consistently, low latency (milliseconds) and synchronous, interactive predictions
