@@ -42,7 +42,7 @@ Note these are my own personal notes and are a work in progress as I study towar
     * enables integration with any external compute resource or service outside SM.
     * When involved, the pipeline execution pauses and sends a task token to the external system via SQS.
     * The external job (e.g. EMR job) performs the work and then returns the task token to resume the pipeline
-  * AmazonSageMakerPipelineIntegrations manage policy, or something commensurate must be attached to said SM pipeline execution role to grant I am permissions required for external jobs (e.g. Amazon EMR job flow) with a pipeline callback step
+  * AmazonSageMakerPipelineIntegrations manage policy, or something commensurate must be attached to said SM pipeline execution role to grant IAM permissions required for external jobs (e.g. Amazon EMR job flow) with a pipeline callback step
 
 ## SM Studio
   * Tagging SM resources/user profiles within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
