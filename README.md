@@ -127,7 +127,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## SM Clarify
   * A tool for detecting bias in pre-training data and explaining post training model predictions, ensuring fairness and transparency in machine learning models.
   * providing feature attribution, explanations, using SHAP values, monitors production inference endpoints for bias drift, and feature attribution drift
-  * can generate model governance reports
+  * can generate model governance reports
 
 ## SM Debugger 
   * provides real-time visibility into training jobs and can automatically detect non-converging conditions (eg: vanishing ingredients, exploding ingredients, or stagnant and loss values) that can be utilized to terminate jobs early (eg: early stopping) to save computational resources, energy use, etc.
