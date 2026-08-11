@@ -130,7 +130,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * can generate model governance reports
 
 ## SM Debugger 
-  * provides real-time visibility into training jobs and can automatically detect non-converging conditions (eg: vanishing gradients, exploding gradients, or stagnant and loss values) that can be utilized to terminate jobs early (eg: early stopping) to save computational resources, energy use, etc.
+  * provides real-time visibility into training jobs and can automatically detect non-converging conditions (eg: vanishing gradients, exploding gradients, or stagnant loss values) that can be utilized to terminate jobs early (eg: early stopping) to save computational resources, energy use, etc.
 
 ## Multi-Model Endpoints
   * available via SM
