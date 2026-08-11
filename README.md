@@ -64,22 +64,22 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## SM serverless inference
   * synchronous
   * supports payload sizes up to 4MB
-  * supports processing times up to 60 seconds
-  * designed for sporadic intermittent or infrequent traffic patterns where cold-start latency is acceptable, but will scale if necessary
+  * supports processing times up to 60 seconds
+  * designed for sporadic intermittent or infrequent traffic patterns where cold-start latency is acceptable, but will scale if necessary
   * unsuitable for consistently low latency, high volume real time predictions if not provisioned
-  * provisioned concurrency is designed specifically for predictable traffic bursts keeping the endpoints warm so that the compute resources are pre-initialized ready to respond with low latency 
-  * allows for one model per endpoint configuration
-  * setting a low maxconcurrency parameter reduces idle compute costs
+  * provisioned concurrency is designed specifically for predictable traffic bursts keeping the endpoints warm so that the compute resources are pre-initialized ready to respond with low latency
+  * allows for one model per endpoint configuration
+  * setting a low maxconcurrency parameter reduces idle compute costs
 
 ## SM real time inference 
-  * Appropriate type when workloads demand consistently, low latency (milliseconds) and synchronous, interactive predictions
-  * endpoint is fully managed and dynamic autoscaling can be configured to handle spikes
-  * HA
-  * pairs well with multi model end point
-  * supports payload sizes up to 6MB
-  * supports processing times up to 60 seconds
-  * if seeing the words "real time, low latency synchronous inference" look for this as an answer 
-  * the question prohibits any infrastructure or scale and configuration management this is not an answer
+  * Appropriate type when workloads demand consistently, low latency (milliseconds) and synchronous, interactive predictions
+  * endpoint is fully managed and dynamic autoscaling can be configured to handle spikes
+  * HA
+  * pairs well with multi model end point
+  * supports payload sizes up to 6MB
+  * supports processing times up to 60 seconds
+  * if seeing the words "real time, low latency synchronous inference" look for this as an answer
+  * the question prohibits any infrastructure or scale and configuration management this is not an answer
 
 ## SM asynchronous inference endpoint
   * Supports payloads up to one gigabyte and processing times up to one hour
@@ -90,8 +90,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## SM Batch Transform
   * asynchronous
   * one model
-  * off-line processing
-  * large scale inference over large data sets
+  * off-line processing
+  * large scale inference over large data sets
 
 ## SM Neo
   * optimizes model deployment and inference speed for edge devices 
