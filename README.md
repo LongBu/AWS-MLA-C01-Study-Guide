@@ -92,6 +92,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * one model
   * off-line processing
   * large scale inference over large data sets
+  * max payload of 100 MB
+  * max processing time of 1 hour
 
 ## SM Neo
   * optimizes model deployment and inference speed for edge devices 
