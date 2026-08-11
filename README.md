@@ -494,7 +494,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Miscellaneous
 
 ## Training Optimizations
-  * store training data in the same ADS region/AZ where the instances are deployed
+  * store training data in the same AWS region/AZ where the instances are deployed
   * launch training instances in the same VPC subnet ensuring that inter-instance communication occurs entirely over the local network segment without any intermediate routing overhead between different subnets
 
 ## Generative models vs Discriminative models
