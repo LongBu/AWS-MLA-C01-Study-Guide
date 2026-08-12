@@ -529,6 +529,10 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
   * For API tokens, look to a Lambda to automate token rotation on a schedule (eg: every 90 days)
 
+## Unified CloudWatch Agent 
+  * available for EC2, ECS, EKS, and/or on-premises servers
+  * pushing memory usage as a custom metric, or logs for debugging to CloudWatch
+
 ## ECR
   * a fully managed container image registry service used to store managing deploy container images
   * not a container, orchestration or runtime service (look to EKS or ECS for this sort of thing)
