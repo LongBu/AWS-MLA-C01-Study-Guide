@@ -46,7 +46,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## SM Studio
   * Tagging SM resources/user profiles within a SM Studio domain allows cost tracking per user or team. AWS Budgets can then monitor these tags and send alerts when usage exceeds a defined threshold.
-  * SM Studio Notebooks provide persistent storage, allowing users to manage multiple notebooks, store datasets, and access them later allowing better management of ML projects
+  * SM Studio Notebooks provide persistent storage, allowing users to manage multiple notebooks, support multi-user domain support, store datasets, and access them later allowing better management of ML projects
   * SM Studio and standalone notebook instances support popular machine learning libraries (e.g., TensorFlow, PyTorch), as these are pre-installed in both.
 
 ## SM Domain
