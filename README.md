@@ -1,4 +1,4 @@
-## AWS-MLAA-C01-Study-Guide
+## AWS-MLA-C01-Study-Guide
 
 Note these are my own personal notes and are a work in progress as I study towards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
 
