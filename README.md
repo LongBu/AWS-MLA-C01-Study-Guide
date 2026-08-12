@@ -37,7 +37,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Natively handles long running processing jobs at scale via SM processing jobs
   * parameters can have default values, but may also be overridden during pipeline execution
   * Provides native execution tracking, step level retries, lineage management, and a unified monitoring interface
-  * Integrate with S3 and supports multiple file formats( e.g. CSV Parque, JSON)
+  * Integrate with S3 and supports multiple file formats( e.g. CSV, Parquet, JSON)
   * Callback in SM pipelines:
     * enables integration with any external compute resource or service outside SM.
     * When involved, the pipeline execution pauses and sends a task token to the external system via SQS.
