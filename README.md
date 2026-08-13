@@ -566,6 +566,11 @@ Note these are my own personal notes and are a work in progress as I study towar
   * AWS managed keys (AWS owned or AWS-managed CMKs) do not allow custom key policies or rotation schedules
   * CloudTrail records all KMS API/operations for the sake of auditing (CloudWatch isn't designed for this)
 
+## IAM
+  * Identity based policies are great for granting/denying access to IAM users or IAM groups within an AWS account
+  * Utilize IAM roles with a trust policy if needing to allow access to resources (eg; s3) from other resources in the same or other accounts (eg: EC2 read access) via assuming said roles
+  * Resource based bucket policies are valid for cross-account access, but are complimentary, not a replacement for IAM role cross-account access to resources
+
 ## AWS Secrets Manager
   * Managed Rotation in AWS Secrets Manager is primarily designed for database credentials
   * Does not support automatic rotation of arbitrary API tokens, though it can securely store them
