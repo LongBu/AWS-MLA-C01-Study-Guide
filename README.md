@@ -112,6 +112,32 @@ Note these are my own personal notes and are a work in progress as I study towar
   * More broadly this is called AutoML
   * if any mention of AutoML, transparent model generation, or low code training with explainable steps on tabular or text datasets look for auto pilot as being part of the solution
 
+## Hyperparameter search strategies
+
+### Grid Search
+  * Exhaustive search: Tests every possible combination of predefined hyperparameter values.
+  * Guaranteed coverage: Provides deterministic, complete coverage of the defined search space.
+  * Best when: The number of combinations is small and training runs are fast/inexpensive.
+  * Tradeoff: Can become computationally expensive as the number of hyperparameters or possible values increases.
+
+### Hyperband
+  * Resource-efficient search: Starts with many hyperparameter configurations and allocates more resources to promising configurations.
+  * Early stopping: Aggressively terminates poorly performing configurations early rather than allowing every configuration to train fully.
+  * Best when: The search space is large and training is expensive, making it important to reduce wasted compute.
+  * Tradeoff: Does not guarantee that every configuration will be fully evaluated.
+
+### Random Search
+  * Random sampling: Selects hyperparameter configurations randomly from the defined search space.
+  * Efficient for high-dimensional spaces: Can perform well when some hyperparameters are more important than others, because it explores different values rather than exhaustively testing every combination.
+  * Best when: The search space is large and exhaustive search would be impractical.Tradeoff: Does not guarantee complete coverage; results depend on the configurations sampled.
+
+### Bayesian Optimization
+  * Surrogate model: Builds a probabilistic model of the relationship between hyperparameters and the objective being optimized.
+  * Intelligent selection: Uses an acquisition function to select promising hyperparameter configurations for the next trial based on previous results.
+  * Sample-efficient: Uses information from previous trials to avoid wasting evaluations on configurations that are unlikely to perform well.
+  * Best when: Individual training runs are expensive and you want to find a good configuration using as few evaluations as possible.
+  * Tradeoff: Does not guarantee exhaustive coverage of the search space.
+
 ## SM Experiments
   * Best way to organize and track steps of a trial: Use Trial Components within trials to represent different stages or steps of a workflow, such as data preprocessing, model training, and evaluation. This allows each step to be tracked separately and results to be compared across trials.
   * Best way to automatically track metadata: Use Trackers to capture metadata such as hyperparameters, dataset versions, code changes, and artifacts without requiring manual logging/instrumentation throughout the training code.
