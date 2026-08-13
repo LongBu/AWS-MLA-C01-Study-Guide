@@ -59,6 +59,11 @@ Note these are my own personal notes and are a work in progress as I study towar
   * serves features for both training and real-time inference, ensuring feature consistency and lineage
   * offline versus online
 
+## SM Processing Jobs
+  * provides a fully managed, minimal overhead, automatically scalable environment tailored for ML preprocessing tasks (eg: deduplication, feature normalization, categorical encoding)
+  * supports pre-built containers
+  * integrates natively with SM Pipelines and training jobs
+
 ## SM script mode
   * run custom training scripts, manage model definition, and allow inference logic inside managed prebuilt SM containers
   * allows the organization of multi-file for the given workflow (training, model definition, inference) specified via a single entry point script
@@ -493,7 +498,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
   * Glue DataBrew allows recipes to be exported and reapplied to new data sets without recomputing the transformation statistics.  This preserves, the pre-processing/transformation steps carried out both in training as well as at runtime inference
   * If wanting to optimize ETL costs (eg: avoid using more resources than necessary) decrease the number of Data Processing Units (DPUs) as the default might be more than what is required for a given job
-  * Job bookmarking is good for optimizing ETL costs as well, so as to avoid rescanning unchanged data, if data is often being uploaded incrementally on a recurring schedule 
+  * Job bookmarking is good for optimizing ETL costs as well, so as to avoid rescanning unchanged data, if data is often being uploaded incrementally on a recurring schedule
+  * Not a good fit for ML-specific workflow preprocessing/feature engineering that is tightly integrated to SM (look to SM Processing Jobs)
   * Inputs:
     * Aurora
     * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
