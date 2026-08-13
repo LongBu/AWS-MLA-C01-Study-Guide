@@ -748,6 +748,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## AWS CloudFormation
   * utilized to define CI/CD IaC for easy management, versioning and replication
   * When a CloudFormation stack is deleted, all resources defined within it are deleted
+  * CreationPolicy and WaitCondition are best suited for validating post-launch configuration success, not for provisioning based on launch status (failure or success)
+  * DependsOn attribute can be used to control creation order of resources.  If DependsOn is declared upon another resource and the resource fails to launch, an automatic rollback of the deployment ensues
 
 ## Docker
 
