@@ -113,7 +113,8 @@ Note these are my own personal notes and are a work in progress as I study towar
   * if any mention of AutoML, transparent model generation, or low code training with explainable steps on tabular or text datasets look for auto pilot as being part of the solution
 
 ## SM Experiments
-  * Best way to organize and track steps of a trial, utilize *trial components* within trials to represent different stages or steps of a workflow within a trial (eg: data preprocessing, model training, evaluation) so as to track each step separately and compare results across trials
+  * Best way to organize and track steps of a trial: Use Trial Components within trials to represent different stages or steps of a workflow, such as data preprocessing, model training, and evaluation. This allows each step to be tracked separately and results to be compared across trials.
+  * Best way to automatically track metadata: Use Trackers to capture metadata such as hyperparameters, dataset versions, code changes, and artifacts without requiring manual logging/instrumentation throughout the training code.
   * Primary benefit of using in a ML workflow is the ability to capture and organize detailed metadata for each trial, ensuring fidelity of reproduction as they were run, which is critical for collaboration/moving models to production
   * Tracks which datasets, hyperparameters, configurations used in the experiments that produced the models, allowing tracibility and performance evaluation
   * offers an API and a graphical interface in SM Studio, allowing visualization and comparison of key performance metrics (eg: accuracy and loss) across different trials to identify the best performing model.
@@ -426,6 +427,8 @@ Note these are my own personal notes and are a work in progress as I study towar
 ## AWS step functions
   * Can orchestrate multi-service workflows with both glue and SM via SDK integrations
   * Not an ML specific pipeline tool (eg: experiment lineage tracking, model artifact versioning, and SM model registry integration) look to SM pipelines for this sort of thing
+  * Best utilized when workflows require coordination across multiple services with conditional branching or human approval steps
+  * operational overhead and latency part of usage
 
 # AWS Glue
   * serverless ETL service that uses Apache Spark under the hood and is suitable for scalable data transformations
@@ -597,6 +600,9 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Model regularization reduces overfitting by penalizing model complexity
   * Feature selection systematically identifies and retains the most predictive features, while discarding irrelevant/redundant features to reduce model complexity to improve accuracy
 
+## Feature Engineering
+  * If adding new features to a model, a good rule of thumb is to validate the updates following retraining of the model and check performance against the previous model
+
 ## L1 (LASSO) vs L2 (Ridge) Regularization
   * Preventing overfitting in ML in general
   * A regularization term is added as weights are learned
@@ -688,6 +694,7 @@ Note these are my own personal notes and are a work in progress as I study towar
 
 ## Athena
   * partition projection
+  * Parquet, columnar storage file format is best for processing and performance (likewise for SM pipelines and AWS glue) over ORC (optimized row columnar)
 
 ## Blue/Green Deployments
   * Allows safe rollouts with instant rollback (provides HA) if problems encountered
@@ -720,6 +727,10 @@ Note these are my own personal notes and are a work in progress as I study towar
 ### Reserved Instances
   * Best suited for steady state workloads (prod)
   * Lack flexibility to handle unpredictable/varying trafflic load
+
+## Low GPU utilization
+  * Commonly caused by a data starved of GPU due to a data loading pipeline not supplying batches fast enough, or the batch size is too small to saturate the GPU computer capacity
+  * This can be mitigated by increasing the batch size
 
 ## EC2 Type suitability
   * General note:
