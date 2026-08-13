@@ -493,6 +493,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Glue DataBrew offers imputing missing values, standardized formatting, region specific cleaning rules, which ensures data quality before a model processes the input(s)
   * Glue DataBrew allows recipes to be exported and reapplied to new data sets without recomputing the transformation statistics.  This preserves, the pre-processing/transformation steps carried out both in training as well as at runtime inference
   * If wanting to optimize ETL costs (eg: avoid using more resources than necessary) decrease the number of Data Processing Units (DPUs) as the default might be more than what is required for a given job
+  * Job bookmarking is good for optimizing ETL costs as well, so as to avoid rescanning unchanged data, if data is often being uploaded incrementally on a recurring schedule 
   * Inputs:
     * Aurora
     * Postgres, Redshift, SqlServer, Oracle, MySql (JDBC datastores) (RDS based or otherwise)
