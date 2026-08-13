@@ -119,6 +119,15 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Tracks which datasets, hyperparameters, configurations used in the experiments that produced the models, allowing tracibility and performance evaluation
   * offers an API and a graphical interface in SM Studio, allowing visualization and comparison of key performance metrics (eg: accuracy and loss) across different trials to identify the best performing model.
 
+## SM Profiler
+  * Designed to monitor system-level resource utilization (eg: CPU, GPU, memory, and I/O throughput) during model training.
+  * Identify resource bottlenecks limited by CPU, GPU, memory, or I/O, allowing you to optimize the training workload.
+  * Monitor training performance metrics to understand how efficiently training resources are being utilized.
+  * Identify underutilized resources, such as GPU underutilization, CPU bottlenecks, or inefficient data-loading pipelines.
+  * Debug training performance: Useful for diagnosing why a training job is taking longer than expected and identifying opportunities to improve training efficiency.
+  * Reduce training costs: By identifying inefficient resource utilization, you can optimize training jobs and potentially reduce training time and compute costs.
+  * Works during model training: SageMaker Profiler collects and analyzes resource utilization and training-related information while the training job is running.
+
 ## SM Canvas
   * fully no code visual interface that enables business analyst and non-technically suited (non-codeers) to build train and deploy ML models
   * Doesn't provide comprehensive data preparation and transformations (if needed, use Data Wrangler)
