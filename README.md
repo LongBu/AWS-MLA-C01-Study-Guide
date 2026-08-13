@@ -81,7 +81,7 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Solution involves training the dataset across replicated models where each replica trains on a different selection of the data, to then synchronize between replicated models
 
 ### Hybrid Model and Data Parallelism Parallelism
-  * Best fit if model is too large and the dataset is too large, combining a combination of the two solutions above.  
+  * Best fit if model is too large and the dataset is too large, combination of Model/Data Parallelism 
 
 ## SM serverless inference
   * synchronous
