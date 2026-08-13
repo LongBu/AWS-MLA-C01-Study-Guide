@@ -134,6 +134,14 @@ Note these are my own personal notes and are a work in progress as I study towar
   * More broadly this is called AutoML
   * if any mention of AutoML, transparent model generation, or low code training with explainable steps on tabular or text datasets look for auto pilot as being part of the solution
 
+## SM Automatic Model Tuning
+  * To initiate an automatic hyperparameter tuning job in SM, one must select to supply the CreateHyeperParameterTuningJob API:
+    * Training Algorithm
+    * Hyperparameter ranges
+    * Objective metric
+  * Can use managed spot training via EnableManagedSpotTraining
+  * Can add a stopping condition via StoppingCondition in the training job configuration
+
 ## Hyperparameter search strategies
 
 ### Grid Search
