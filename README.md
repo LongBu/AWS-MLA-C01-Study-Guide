@@ -60,8 +60,10 @@ Note these are my own personal notes and are a work in progress as I study towar
   * offline versus online
 
 ## SM script mode
-  * run custom training scripts inside managed prebuilt SM containers
+  * run custom training scripts, manage model definition, and allow inference logic inside managed prebuilt SM containers
+  * allows the organization of multi-file for the given workflow (training, model definition, inference) specified via a single entry point script
   * allows the use of AWS infrastructure to enable scaling, distribute training and logging
+  * if utilizing a requirements.txt for external python packages not found in the SM container image, the container runs this via pip during intialization
 
 ## Distributed Training
 
