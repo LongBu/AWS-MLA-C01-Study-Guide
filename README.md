@@ -833,6 +833,9 @@ Note these are my own personal notes and are a work in progress as I study towar
 # Oversampling
   * should not be applied before conducting EDA to understand data quality, distribution (eg: class imbalance), and missing values.
 
+## Weighted Loss Function
+  * If dealing with imbalanced classes, and your trying to minimize False Negatives by penalizing misclassification of the minority class, this outranks utilizing Recall while the class imbalance still exists, which can be abated by oversampling techniques
+
 # Ensemble Learning
 
 ## (Model) Stacking
