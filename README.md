@@ -63,6 +63,19 @@ Note these are my own personal notes and are a work in progress as I study towar
   * run custom training scripts inside managed prebuilt SM containers
   * allows the use of AWS infrastructure to enable scaling, distribute training and logging
 
+## Distributed Training
+
+### Model Parallelism
+  * Best fit if model is too large for a single GPU's memory, ending in out of memory errors
+  * Solution involves model graph/layers spread across GPUs/instances
+
+### Data Parallelism
+  * Best fit if dataset is large and can fit on a single GPU's memory, though it can't process efficiently on one device leading to slow training or memory pressure due to the large data volume
+  * Solution involves training the dataset across replicated models where each replica trains on a different selection of the data, to then synchronize between replicated models
+
+### Hybrid Model and Data Parallelism Parallelism
+  * Best fit if model is too large and the dataset is too large, combining a combination of the two solutions above.  
+
 ## SM serverless inference
   * synchronous
   * supports payload sizes up to 4MB
