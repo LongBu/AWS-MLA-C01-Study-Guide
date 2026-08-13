@@ -254,12 +254,16 @@ Note these are my own personal notes and are a work in progress as I study towar
   * Lowering the temperature via the Amazon Bedrock API and reducing the top-K parameter limits randomness in token selection, leading to more deterministic and consistent responses from the LLM.
   * Retrain the LLM (aka: fine tune the FM [not from scratch]) with a retail-specific dataset to improve consistency in responses related to product information and return policies.
   * features Retrieval Augmented Generation (RAG) enhances a model’s content generation for more accurate and aligned responses with the organization’s context by retrieving information from external sources like a knowledge base.
+  * serverless, so customers do not need to provision or manage model endpoints or underlying inference infrastructure.
+  * Processes requests within the selected AWS Region, making regional data residency an important consideration for compliance-sensitive workloads. 
 
 # SM Jumpstart
   * model hub that provides access to hundreds of pre-trained FMs and LLMs
   * allows users to fine-tune these model on custom data sets through a GUI in SM studio
   * Offers prebuilt solution templates, algorithms, and Jupiter notebooks supporting both traditional ML workflows and generative AI use cases
   * Good selection if a question involves fine-tuning a pre-trained LLM or FM with low code, tooling and rapid deployment
+  * Models are deployed using SM managed infrastructure, such as real-time endpoints or batch transform jobs; not serverless
+  * Customers are responsible for configuring and managing the underlying SM resources, including endpoint and infrastructure configuration. 
 
 # Data mesh architecture
   * data as a product with the decentralized data ownership and domain oriented architecture
