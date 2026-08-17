@@ -1,6 +1,6 @@
 ## AWS-MLA-C01-Study-Guide
 
-Note these are my own personal notes and are a work in progress as I study towards passing this exam.  If this helps someone great, but I make no guarantees/promises.  
+Note these are my own personal notes and are a work in progress as I study towards passing this exam.  If this helps someone great, but I make no guarantees/promises.  For what it's worth I passed in August 2026.  Enjoy!
 
 ## Table of Contents
 1. <a href="#introduction">Introduction</a>
